@@ -20,24 +20,16 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
-		[self initialize];
+		selectedImg = [UIImage systemImageNamed:@"checkmark.square"];
+		unselectedImg = [UIImage systemImageNamed:@"square"];
 	}
 	return self;
 }
-
-- (void)initialize {
-	
-	selectedImg = [UIImage systemImageNamed:@"checkmark.square"];
-	unselectedImg = [UIImage systemImageNamed:@"square"];
-	
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
 	self.textLabel.textColor = selected ? [UIColor redColor] : [UIColor blackColor];
 	self.imageView.image = selected ? selectedImg : unselectedImg;
-	
 }
 
 @end
